@@ -140,5 +140,3 @@ When reporting an issue, include as much information as possible about what happ
 ## License
 
 PawPause is currently distributed as compiled software only. Source code is not included in this repository.
-
-All rights reserved.
