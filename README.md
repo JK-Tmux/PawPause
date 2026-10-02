@@ -15,8 +15,8 @@ If multiple keys are pressed almost simultaneously in a pattern consistent with 
 By default, PawPause detects:
 
 - 3 or more non-modifier keys
-- pressed within approximately 20 milliseconds
-- while those keys are simultaneously held down
+- Pressed within approximately 20 milliseconds
+- While those keys are simultaneously held down
 
 This allows PawPause to catch a paw press before the first key in the detected cluster reaches the active application.
 
@@ -44,29 +44,29 @@ PawPause was created to let the keyboard remain usable without letting a cat acc
 
 ## Installation
 
-### Recommended
+1. Download the latest `PawPause.exe` from the **Releases** section of this repository.
+2. Place `PawPause.exe` in a permanent location on your computer.
+3. Double-click `PawPause.exe` to start PawPause.
 
-Download the latest `PawPause.exe` from the **Releases** section.
+No installation process is required.
 
-No Python installation is required.
+PawPause is a standalone Windows executable. Python and other additional software are not required.
 
-Run:
+## Running PawPause Manually
+
+Automatic startup is optional.
+
+PawPause can be launched whenever it is needed by simply double-clicking:
 
 ```text
 PawPause.exe
 ```
 
-### Run From Source
+PawPause begins monitoring keyboard input as soon as it starts and remains active while the application is running.
 
-PawPause currently requires Windows.
+Since no installation is required, `PawPause.exe` can be stored anywhere on your computer.
 
-Install Python 3 and run:
-
-```powershell
-py pawpause.py
-```
-
-PawPause uses Python's standard library and does not require additional Python packages.
+> **Tip:** If you plan to use PawPause regularly, store the executable in a permanent location such as a dedicated `PawPause` folder. This also prevents a Startup shortcut from breaking if the executable is later moved.
 
 ## Start PawPause Automatically
 
@@ -85,16 +85,6 @@ shell:startup
 Keep the actual executable in a permanent location. The Startup folder should contain a **shortcut** to the executable rather than the executable itself.
 
 Once configured, PawPause will start automatically each time you sign into Windows.
-
-## Running PawPause Manually
-
-Automatic startup is optional. PawPause can also be launched whenever it is needed by simply double-clicking `PawPause.exe`.
-
-PawPause begins monitoring keyboard input as soon as it starts and remains active while the application is running.
-
-No installation process is required. `PawPause.exe` is a standalone application and can be stored anywhere on your computer.
-
-> **Tip:** If you plan to use PawPause regularly, store the executable in a permanent location such as a dedicated `PawPause` folder. This also prevents a Startup shortcut from breaking if the executable is later moved.
 
 ## Detection
 
@@ -131,38 +121,18 @@ PawPause is an experimental utility.
 - Detection thresholds may need adjustment for different keyboards and typing styles.
 - Some unusual human key combinations could potentially be mistaken for paw input.
 - Windows secure key sequences are outside the control of a normal user-space keyboard hook.
-- PawPause currently targets Windows only.
+- PawPause currently supports Windows only.
 
-Do not rely on PawPause as a security mechanism or as protection against destructive actions.
+PawPause should not be relied upon as a security mechanism or as protection against destructive actions.
 
-## Building the EXE
+## Issues and Feedback
 
-Install PyInstaller:
+If you encounter a problem with PawPause, you can report it through the **Issues** section of this repository.
 
-```powershell
-py -m pip install pyinstaller
-```
-
-Build PawPause:
-
-```powershell
-py -m PyInstaller --onefile --clean --icon="pawpause.ico" --name PawPause pawpause.py
-```
-
-The resulting executable will be located at:
-
-```text
-dist\PawPause.exe
-```
-
-The computer running the compiled executable does **not** need Python installed.
-
-## Contributing
-
-Bug reports, testing results, and improvements to the detection algorithm are welcome.
-
-If PawPause incorrectly detects normal typing or fails to detect a paw press, include information about the keyboard and the input pattern that caused the problem.
+When reporting an issue, include as much information as possible about what happened and what you were doing when the problem occurred.
 
 ## License
 
-See [LICENSE](LICENSE).
+PawPause is currently distributed as compiled software only. Source code is not included in this repository.
+
+All rights reserved.
